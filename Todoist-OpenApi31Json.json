@@ -1,0 +1,1528 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Todoist",
+    "description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request]() types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable]() called `base_url` with the sample request [https://postman-api-learner.glitch.me](). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts]() in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics]()  \n[API documentation]()  \n[Authorization methods]()",
+    "contact": {},
+    "version": "1.0"
+  },
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "servers": [
+    {
+      "url": "https://api.todoist.com/rest/v2",
+      "variables": {}
+    },
+    {
+      "url": "https://api.getpostman.com/collections",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/projects": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET-Authorization",
+        "operationId": "GET-Authorization",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST-Add Project",
+        "operationId": "POST-AddProject",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-AddProjectRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "Shopping List"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "Shopping List"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/projects/2203306141": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET-Project by Id",
+        "operationId": "GET-ProjectbyId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "DELETE - Delete a Project",
+        "operationId": "DELETE-DeleteaProject",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST-Update Projetct by Id",
+        "operationId": "POST-UpdateProjetctbyId",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-UpdateProjetctbyIdRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "Things To Buy"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "Things To Buy"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/tasks": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Add New Task",
+        "operationId": "POST-AddNewTask",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-AddNewTaskRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "content": "Buy Milk",
+                        "project_id": "2203306141"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "content": "Buy Milk",
+                "project_id": "2203306141"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - Active Tasks",
+        "operationId": "GET-ActiveTasks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/tasks/2995104339": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST- Update a Task",
+        "operationId": "POST-UpdateaTask",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-UpdateaTaskRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "due_string": "tomorrow"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "due_string": "tomorrow"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - Active Task by Id",
+        "operationId": "GET-ActiveTaskbyId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "DELETE - Task by Id",
+        "operationId": "DELETE-TaskbyId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/tasks/2995104339/close": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST-Completing a Task",
+        "operationId": "POST-CompletingaTask",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/projects/2203306141/collaborators": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET-All Colaborators",
+        "operationId": "GET-AllColaborators",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/sections": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - All Sections",
+        "operationId": "GET-AllSections",
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "contentEncoding": "int64",
+              "examples": [
+                2203306141
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST-Create a New Section",
+        "operationId": "POST-CreateaNewSection",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-CreateaNewSectionRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "project_id": "2203306141",
+                        "name": "Groceries"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "project_id": "2203306141",
+                "name": "Groceries"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/sections/7025": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - Single Section by Id",
+        "operationId": "GET-SingleSectionbyId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST- Update Section by Id",
+        "operationId": "POST-UpdateSectionbyId",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-UpdateSectionbyIdRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "Supermarket"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "Supermarket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Delete Section by Id",
+        "operationId": "DeleteSectionbyId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/tasks/2995104339/reopen": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Reopen a Task by Id",
+        "operationId": "POST-ReopenaTaskbyId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/comments": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - All Comments on a Task",
+        "operationId": "GET-AllCommentsonaTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "contentEncoding": "int64",
+              "examples": [
+                2995104339
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Create a New Comment",
+        "operationId": "POST-CreateaNewComment",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "examples": [
+                  "@/tmp/note.json"
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": "@/tmp/note.json"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/comments/2992679862": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - Get a Comment",
+        "operationId": "GET-GetaComment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Update a Comment",
+        "operationId": "POST-UpdateaComment",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-UpdateaCommentRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "content": "Need two bottles of milk"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "content": "Need two bottles of milk"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "DELETE - Delete a Comment",
+        "operationId": "DELETE-DeleteaComment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/labels": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - All Labels",
+        "operationId": "GET-AllLabels",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Create a New Personal Label",
+        "operationId": "POST-CreateaNewPersonalLabel",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-CreateaNewPersonalLabelRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "Food"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "Food"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/labels/2156154810": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - A Personal Label",
+        "operationId": "GET-APersonalLabel",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Update a Personal Label",
+        "operationId": "POST-UpdateaPersonalLabel",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-UpdateaPersonalLabelRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "Drinks"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "Drinks"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "DELETE - A Personal Label",
+        "operationId": "DELETE-APersonalLabel",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/labels/shared": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET - All Shared Labels",
+        "operationId": "GET-AllSharedLabels",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/labels/shared/rename": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Rename a Shared Labels",
+        "operationId": "POST-RenameaSharedLabels",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-RenameaSharedLabelsRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "MyLabel",
+                        "new_name": "RenamedLabel"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "MyLabel",
+                "new_name": "RenamedLabel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/labels/shared/remove": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "POST - Remove a Shared Labels",
+        "operationId": "POST-RemoveaSharedLabels",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "$(uuidgen)"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/POST-RemoveaSharedLabelsRequest"
+                  },
+                  {
+                    "examples": [
+                      {
+                        "name": "MyLabel"
+                      }
+                    ]
+                  }
+                ],
+                "contentMediaType": "application/json"
+              },
+              "example": {
+                "name": "MyLabel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://api.todoist.com/rest/v2",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/collectionId=1105966-d95294f4-fe47-450c-9e3a-5792260b4c49": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "TransformPostmanOnSwagger",
+        "operationId": "TransformPostmanOnSwagger",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.getpostman.com/collections",
+            "variables": {}
+          }
+        ]
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "POST-AddProjectRequest": {
+        "title": "POST-AddProjectRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "Shopping List"
+          }
+        ]
+      },
+      "POST-AddNewTaskRequest": {
+        "title": "POST-AddNewTaskRequest",
+        "required": [
+          "content",
+          "project_id"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "project_id": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "content": "Buy Milk",
+            "project_id": "2203306141"
+          }
+        ]
+      },
+      "POST-UpdateaTaskRequest": {
+        "title": "POST-UpdateaTaskRequest",
+        "required": [
+          "due_string"
+        ],
+        "type": "object",
+        "properties": {
+          "due_string": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "due_string": "tomorrow"
+          }
+        ]
+      },
+      "POST-UpdateProjetctbyIdRequest": {
+        "title": "POST-UpdateProjetctbyIdRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "Things To Buy"
+          }
+        ]
+      },
+      "POST-CreateaNewSectionRequest": {
+        "title": "POST-CreateaNewSectionRequest",
+        "required": [
+          "project_id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "project_id": "2203306141",
+            "name": "Groceries"
+          }
+        ]
+      },
+      "POST-UpdateSectionbyIdRequest": {
+        "title": "POST-UpdateSectionbyIdRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "Supermarket"
+          }
+        ]
+      },
+      "POST-CreateaNewTaskRequest": {
+        "title": "POST-CreateaNewTaskRequest",
+        "required": [
+          "content",
+          "due_string",
+          "due_lang",
+          "priority"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "due_string": {
+            "type": "string"
+          },
+          "due_lang": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer",
+            "contentEncoding": "int32"
+          }
+        },
+        "examples": [
+          {
+            "content": "Buy Milk",
+            "due_string": "tomorrow at 12:00",
+            "due_lang": "en",
+            "priority": 4
+          }
+        ]
+      },
+      "POST-UpdateTaskbyIdRequest": {
+        "title": "POST-UpdateTaskbyIdRequest",
+        "required": [
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "content": "Buy Coffee"
+          }
+        ]
+      },
+      "POST-UpdateaCommentRequest": {
+        "title": "POST-UpdateaCommentRequest",
+        "required": [
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "content": "Need two bottles of milk"
+          }
+        ]
+      },
+      "POST-CreateaNewPersonalLabelRequest": {
+        "title": "POST-CreateaNewPersonalLabelRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "Food"
+          }
+        ]
+      },
+      "POST-UpdateaPersonalLabelRequest": {
+        "title": "POST-UpdateaPersonalLabelRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "Drinks"
+          }
+        ]
+      },
+      "POST-RenameaSharedLabelsRequest": {
+        "title": "POST-RenameaSharedLabelsRequest",
+        "required": [
+          "name",
+          "new_name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "new_name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "MyLabel",
+            "new_name": "RenamedLabel"
+          }
+        ]
+      },
+      "POST-RemoveaSharedLabelsRequest": {
+        "title": "POST-RemoveaSharedLabelsRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "name": "MyLabel"
+          }
+        ]
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
